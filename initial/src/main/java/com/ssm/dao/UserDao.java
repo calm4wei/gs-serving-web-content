@@ -1,9 +1,9 @@
 package com.ssm.dao;
 
-import com.ssm.bean.User;
+import com.ssm.domain.User;
 import com.ssm.util.DataSourceUtils;
+import org.springframework.stereotype.Repository;
 
-import javax.activation.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +13,8 @@ import java.util.List;
  *
  * @author feng.wei
  */
+
+@Repository
 public class UserDao {
 
     public List<User> queryUsersAll() {

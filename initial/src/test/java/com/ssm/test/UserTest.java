@@ -1,6 +1,6 @@
 package com.ssm.test;
 
-import com.ssm.bean.User;
+import com.ssm.domain.User;
 import com.ssm.dao.UserDao;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.ssm.bean;
+package com.ssm.domain;
 
 /**
  * Created on 2016/6/22
