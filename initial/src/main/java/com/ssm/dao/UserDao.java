@@ -1,7 +1,9 @@
 package com.ssm.dao;
 
 import com.ssm.domain.User;
+import com.ssm.util.DataSourceBean;
 import com.ssm.util.DataSourceUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.sql.*;
@@ -17,13 +19,19 @@ import java.util.List;
 @Repository
 public class UserDao {
 
+    @Autowired
+    DataSourceBean dataSourceBean;
+
     public List<User> queryUsersAll() {
-        Connection connection = DataSourceUtils.getConnection();
-        String sql = "SELECT * from users";
+        List<User> userList = new ArrayList<User>();
+        Connection connection = null;
         Statement statement = null;
         ResultSet rs = null;
-        List<User> userList = new ArrayList<User>();
+//        Connection connection = DataSourceUtils.getConnection();
         try {
+            connection = this.dataSourceBean.getDataSource().getConnection();
+            String sql = "SELECT * from users";
+
             statement = connection.createStatement();
             rs = statement.executeQuery(sql);
             while (rs.next()) {
