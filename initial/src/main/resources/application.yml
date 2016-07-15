@@ -1,0 +1,19 @@
+
+
+spring:
+  # THYMELEAF (ThymeleafAutoConfiguration) : 默认配置
+  thymeleaf:
+    check-template-location: true
+    prefix: classpath:/views/   # 默认为 /templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    cache: true
+
+  # (DataSourceAutoConfiguration & DataSourceProperties)
+  datasource:
+    name: ds-h2
+    url: jdbc:h2:D:/work/workspace/fork/gs-serving-web-content/initial/data/fdata;DATABASE_TO_UPPER=false
+    username: h2
+    password: h2
+    driver-class: org.h2.Driver
